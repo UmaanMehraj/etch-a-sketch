@@ -15,5 +15,14 @@ while (count < square && (num >= 10 && num <= 100)) {
     div.style.boxSizing = "border-box"
     div.style.border = "1px solid silver"
     container.appendChild(div)
-    count++;
+    count++
 }
+
+let child = document.querySelectorAll('#container > div')
+
+child.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        el.classList.add('div-black')
+    })
+})
+
