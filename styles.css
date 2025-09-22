@@ -1,0 +1,44 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.text,
+.footer {
+  display: flex;
+  background-color: #184a4c;
+  color: silver;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 75px;
+  margin: 0px;
+  justify-content: center;
+}
+
+.text {
+  font-size: 40px;
+  font-weight: 700;
+}
+.footer {
+  font-size: 16px;
+  padding: 35px;
+}
+.footer > div > a {
+  color: lightyellow;
+}
+.footer > div > a:hover {
+  color: palevioletred;
+}
+
+#container {
+  width: 960px;
+  height: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid blueviolet;
+}
+
+.master-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 150px;
+}
