@@ -5,41 +5,53 @@ let square, numOfDivs
 
 const grid = document.querySelector('#grid')
 
-grid.addEventListener('click', () => {
-    num = parseInt(prompt('Enter number of divs (10 - 100): '))
-    if (num < 10 || num > 100) {
-        num = parseInt(prompt('Enter number of divs (10 - 100): '))
-    }
-
-    populate(num)
-
-})
 
 
-let count = 0
 
 
 function populate(num) {
     square = num * num
     numOfDivs = 100 / num
-    while (count < square && (num >= 10 && num <= 100)) {
+    for (let i = 0; i < square; i++) {
         const div = document.createElement('div')
         div.style.height = `${numOfDivs}%`
         div.style.width = `${numOfDivs}%`
         div.style.boxSizing = "border-box"
         div.style.border = "1px solid silver"
         container.appendChild(div)
-        count++
     }
 }
 
+
+
 populate(num)
 
+grid.addEventListener('click', () => {
+    let inp = Number(prompt('Enter number of divs (10 - 100): '))
+    if (inp < 10 || inp > 100) {
+        num = Number(prompt('Enter number of divs (10 - 100): '))
+    }
+    container.innerHTML = ""
+    populate(inp)
 
+    const child = document.querySelectorAll('#container > div')
+
+    child.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            el.classList.add('div-black')
+        })
+    })
+
+
+
+
+
+
+})
 
 const child = document.querySelectorAll('#container > div')
 
-child.forEach(el => {
+let color = child.forEach(el => {
     el.addEventListener('mouseenter', () => {
         el.classList.add('div-black')
     })
@@ -47,10 +59,13 @@ child.forEach(el => {
 
 const reset = document.querySelector('#reset')
 
-reset.addEventListener('click', () => {
-    child.forEach(el => {
-        el.classList.remove('div-black')
-    })
+let btReset = reset.addEventListener('click', () => {
+    // child.forEach(el => {
+    //     el.classList.remove('div-black')
+    // })
+    location.reload()
+
 
 })
+
 
